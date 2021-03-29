@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6410077696881022087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6034536633696456253}
+  - component: {fileID: 7210580271941288344}
+  - component: {fileID: 4897057407715308882}
+  - component: {fileID: 5123905415220144006}
+  - component: {fileID: 3575569004074048197}
+  m_Layer: 0
+  m_Name: "\u0437\u0435\u043C\u043B\u044F"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6034536633696456253
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6410077696881022087}
+  m_LocalRotation: {x: -0.3751067, y: 0.020818919, z: 0.6799866, w: 0.62966645}
+  m_LocalPosition: {x: -3.820934, y: 1.5076857, z: -2.1539204}
+  m_LocalScale: {x: 50, y: 50, z: 50}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -30.046001, y: -33.989002, z: 103.77901}
+--- !u!33 &7210580271941288344
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6410077696881022087}
+  m_Mesh: {fileID: -324559679157466117, guid: 7bea48bef663428468c74bf4a63d4b7a, type: 3}
+--- !u!23 &4897057407715308882
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6410077696881022087}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 297568439580127186, guid: 7bea48bef663428468c74bf4a63d4b7a, type: 3}
+  - {fileID: -2813467912831258332, guid: 7bea48bef663428468c74bf4a63d4b7a, type: 3}
+  - {fileID: -8274133419916619345, guid: 7bea48bef663428468c74bf4a63d4b7a, type: 3}
+  - {fileID: -3522955778539423533, guid: 7bea48bef663428468c74bf4a63d4b7a, type: 3}
+  - {fileID: 4325000470405458147, guid: 7bea48bef663428468c74bf4a63d4b7a, type: 3}
+  - {fileID: 5577887222244882475, guid: 7bea48bef663428468c74bf4a63d4b7a, type: 3}
+  - {fileID: 474761548000704790, guid: 7bea48bef663428468c74bf4a63d4b7a, type: 3}
+  - {fileID: 8654305473745395378, guid: 7bea48bef663428468c74bf4a63d4b7a, type: 3}
+  - {fileID: -6182966036367855231, guid: 7bea48bef663428468c74bf4a63d4b7a, type: 3}
+  - {fileID: 2100000, guid: 22bf3c20da0c15043bb52f00324ce4a3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!135 &5123905415220144006
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6410077696881022087}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.10877607
+  m_Center: {x: -0.015169906, y: -0.022947662, z: -0.10785669}
+--- !u!114 &3575569004074048197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6410077696881022087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d891d12ffa2537429709cadaf2b7063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  health: 100
+  explosionFX: {fileID: 100002, guid: 9675dc7bbf0ba9e4cad5cafe3f4f7ee5, type: 3}

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3217578950151651803}
   - component: {fileID: 4786921970863891550}
   - component: {fileID: 968383252430878083}
+  - component: {fileID: 3088313080234495463}
   m_Layer: 9
   m_Name: m3
   m_TagString: Asteroid
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 5955728649177731901}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.70710677}
   m_LocalPosition: {x: -56.25, y: 0.0018834472, z: 0.4301359}
-  m_LocalScale: {x: 85.10639, y: 73.09095, z: 126.28058}
+  m_LocalScale: {x: 40, y: 40, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -59,6 +60,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -84,6 +86,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &294926849186677290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,9 +101,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   spin: 100
-  xReflectionFactor: 25000
-  yReflectionFactor: 10000
-  target: {fileID: 6034536633696456253, guid: b4d3f999e23cc8743bc51a5794045b16, type: 3}
+  xReflectionFactor: 30000
+  yReflectionFactor: 13000
+  target: {fileID: 8065553473741521742, guid: b4d3f999e23cc8743bc51a5794045b16, type: 3}
   explosionVfx: {fileID: 198194127032045410, guid: 46876a2780737ec45a19d62f88e5ce56,
     type: 3}
   isActive: 1
@@ -126,7 +129,7 @@ SphereCollider:
   m_GameObject: {fileID: 5955728649177731901}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.008938591
   m_Center: {x: 0.0048715807, y: -0.0017342956, z: -0.0061048404}
@@ -145,4 +148,18 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 8
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
+--- !u!136 &3088313080234495463
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5955728649177731901}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.008931733
+  m_Height: 0.020457255
+  m_Direction: 1
+  m_Center: {x: 0.0048715803, y: -0.00035831053, z: -0.005611223}

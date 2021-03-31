@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4535836455538411109
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3871221656073673951}
+  - component: {fileID: 150461572129297274}
+  - component: {fileID: 2734383478388680624}
+  - component: {fileID: -772974808024890698}
+  m_Layer: 0
+  m_Name: tesla
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3871221656073673951
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4535836455538411109}
+  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
+  m_LocalPosition: {x: -22.363415, y: 9.84195, z: -19.238459}
+  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90, y: -90, z: 0}
+--- !u!33 &150461572129297274
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4535836455538411109}
+  m_Mesh: {fileID: 1255414723064137617, guid: a95cce3a2933b0349af9dfc223d27b13, type: 3}
+--- !u!23 &2734383478388680624
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4535836455538411109}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: -2813337366143557646, guid: a95cce3a2933b0349af9dfc223d27b13, type: 3}
+  - {fileID: 9185737683893222716, guid: a95cce3a2933b0349af9dfc223d27b13, type: 3}
+  - {fileID: 99656467281103303, guid: a95cce3a2933b0349af9dfc223d27b13, type: 3}
+  - {fileID: -541708846208547136, guid: a95cce3a2933b0349af9dfc223d27b13, type: 3}
+  - {fileID: -5998004595915773402, guid: a95cce3a2933b0349af9dfc223d27b13, type: 3}
+  - {fileID: 7498461928983958705, guid: a95cce3a2933b0349af9dfc223d27b13, type: 3}
+  - {fileID: 7993982598810627253, guid: a95cce3a2933b0349af9dfc223d27b13, type: 3}
+  - {fileID: 6699446615349125189, guid: a95cce3a2933b0349af9dfc223d27b13, type: 3}
+  - {fileID: 725804396391725484, guid: a95cce3a2933b0349af9dfc223d27b13, type: 3}
+  - {fileID: 8975480819012031255, guid: a95cce3a2933b0349af9dfc223d27b13, type: 3}
+  - {fileID: -8705533452240791338, guid: a95cce3a2933b0349af9dfc223d27b13, type: 3}
+  - {fileID: 9101280890363022628, guid: a95cce3a2933b0349af9dfc223d27b13, type: 3}
+  - {fileID: 8964088591131456171, guid: a95cce3a2933b0349af9dfc223d27b13, type: 3}
+  - {fileID: 1129505859253339258, guid: a95cce3a2933b0349af9dfc223d27b13, type: 3}
+  - {fileID: 2413751341462511734, guid: a95cce3a2933b0349af9dfc223d27b13, type: 3}
+  - {fileID: -6478536213147159724, guid: a95cce3a2933b0349af9dfc223d27b13, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-772974808024890698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4535836455538411109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70514622dfd8bec4c86e3094bff320af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  spin: 10
+  target: {fileID: 8065553473741521742, guid: b4d3f999e23cc8743bc51a5794045b16, type: 3}

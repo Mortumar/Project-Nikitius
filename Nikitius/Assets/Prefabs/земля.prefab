@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6359436389926767851}
   - component: {fileID: 9197958999290935329}
   - component: {fileID: 7522176154587724669}
+  - component: {fileID: 919132149052615650}
   m_Layer: 10
   m_Name: "\u0437\u0435\u043C\u043B\u044F"
   m_TagString: Finish
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7252284732287244788}
-  m_LocalRotation: {x: -0.10260635, y: -0.72457075, z: -0.56032515, w: 0.3879498}
+  m_LocalRotation: {x: -0.10260242, y: -0.724572, z: -0.5603246, w: 0.38794917}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
@@ -70,7 +71,6 @@ MeshRenderer:
   - {fileID: 8654305473745395378, guid: 84ddbc4dc48d7da478e326789c7fb154, type: 3}
   - {fileID: -6182966036367855231, guid: 84ddbc4dc48d7da478e326789c7fb154, type: 3}
   - {fileID: 2100000, guid: 22bf3c20da0c15043bb52f00324ce4a3, type: 2}
-  - {fileID: 2100000, guid: 22bf3c20da0c15043bb52f00324ce4a3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -107,3 +107,16 @@ MonoBehaviour:
   speed: 10
   health: 100
   explosionFX: {fileID: 100002, guid: 9675dc7bbf0ba9e4cad5cafe3f4f7ee5, type: 3}
+--- !u!135 &919132149052615650
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7252284732287244788}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.048481937
+  m_Center: {x: 0.0010852336, y: -0.0009774494, z: -0.0017991161}

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
+
 
 public class EarthStrike : MonoBehaviour
 {
@@ -8,6 +10,7 @@ public class EarthStrike : MonoBehaviour
     [SerializeField] float minimumRange = 0f;
     [SerializeField] float maximumRange = 100f;
     [SerializeField] float timeToDestroy = 2f;
+
 
     float size;
     // Start is called before the first frame update
@@ -21,13 +24,12 @@ public class EarthStrike : MonoBehaviour
     {
         InitiateStrike();
     }
-
-    public void InitiateStrike()
+  
+     void InitiateStrike()
     {
         size += Mathf.Lerp(minimumRange, maximumRange, strikeSpeed * Time.deltaTime);
         transform.localScale = new Vector3(size, size,10f);
         Destroy(gameObject, timeToDestroy);
     }
-
 
 }

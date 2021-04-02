@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa831a089fd2dd64db0654afe5141ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 7
   spin: 100
   xReflectionFactor: 30000
   yReflectionFactor: 13000
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cba8047d499c2cf4891c7f458aecd4dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 20
 --- !u!135 &6001269926067192542
 SphereCollider:
   m_ObjectHideFlags: 0

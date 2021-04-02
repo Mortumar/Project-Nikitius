@@ -9,10 +9,13 @@ public class Perk : MonoBehaviour
     [SerializeField] float spin = 10f;
 
     [SerializeField] Transform target;
+
+    EarthEnergy earthEnergy;
+    [SerializeField] int EnergyToAdd = 25;
     // Start is called before the first frame update
     void Start()
     {
-        
+        earthEnergy = FindObjectOfType<EarthEnergy>();
     }
 
     // Update is called once per frame
@@ -36,6 +39,7 @@ public class Perk : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            earthEnergy.AddEnergy(EnergyToAdd);
             Destroy(gameObject);
         }
         else if (other.gameObject.tag == "Finish")

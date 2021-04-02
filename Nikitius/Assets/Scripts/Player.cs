@@ -10,63 +10,61 @@ public class Player : MonoBehaviour
     [SerializeField] float fullBoostCapacity = 2f;
     [SerializeField] float currentBoostCapacity;
     [SerializeField] float boostSpeed = 2f;
-    
+
     [SerializeField] float boostСonsumption = 2f;
     [SerializeField] float boostRecoveryRate = 1f;
 
-    [SerializeField] GameObject earthStrike;
+    [SerializeField] GameObject strikePrefab;
+    int energyCost = 100;
 
     Rigidbody rigidBody;
-    
-    
 
-    // Start is called before the first frame update
+    float xThrow, yThrow;
+
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
         currentBoostCapacity = fullBoostCapacity;
     }
 
-    // Update is called once per frame
     void Update()
     {
         ApplyRotation();
         ApplyThrust();
         ApplyBoost();
         BoostRecovery();
-        ApplyEarthStrike();
-
+        InititateEarthStrike();
     }
-      private void ApplyRotation()
+     private void ApplyRotation()
      {
-        if (Input.GetKey(KeyCode.A))
-         {
-             transform.Rotate(Vector3.up, rotationFactor);
-         }
-         else if (Input.GetKey(KeyCode.D))
+        if (CrossPlatformInputManager.GetButton("Horizontal button 1"))
+
+            transform.Rotate(Vector3.up, rotationFactor);
+         
+         else if (CrossPlatformInputManager.GetButton("Horizontal button 2"))
          {
              transform.Rotate(Vector3.down, rotationFactor);
          }
-     }
-    /*  private void ApplyRotation()
-   {
-       float zRotation = CrossPlatformInputManager.GetAxis("Horizontal");
-       float zOffset = zRotation * rotationFactor * Time.deltaTime;
-       float newZRotation = transform.rotation.z + zOffset;
+     } 
+     /*  private void ApplyRotation()
+    {
+        float zRotation = CrossPlatformInputManager.GetAxis("Horizontal");
+        float zOffset = zRotation * rotationFactor * Time.deltaTime;
+        float newZRotation = transform.rotation.z + zOffset;
 
-      Quaternion endZRotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, newZRotation);
-      Quaternion startZRotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z);
-       if (newZRotation > 0 || newZRotation < 0 )
-      transform.rotation = Quaternion.Lerp(startZRotation, endZRotation, rotationFactor * Time.deltaTime);
-       else { return; }
-      transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y, newZRotation);
-  } */
-
+       Quaternion endZRotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, newZRotation);
+       Quaternion startZRotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z);
+        if (newZRotation > 0 || newZRotation < 0 )
+       transform.rotation = Quaternion.Lerp(startZRotation, endZRotation, rotationFactor * Time.deltaTime);
+        else { return; }
+       transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y, newZRotation);
+   } */
+   
     private void ApplyThrust()
     {
         if (CrossPlatformInputManager.GetButton("Jump"))
         {
-           transform.Translate(Vector3.forward * thrust * Time.deltaTime);
+            transform.Translate(Vector3.forward * thrust * Time.deltaTime);
         }
     }
 
@@ -76,7 +74,7 @@ public class Player : MonoBehaviour
         {
             if (currentBoostCapacity > 0)
             { transform.Translate(Vector3.forward * boostSpeed * Time.deltaTime);
-              currentBoostCapacity -=  boostСonsumption * Time.deltaTime;
+                currentBoostCapacity -= boostСonsumption * Time.deltaTime;
             }
             else
             { return; }
@@ -90,14 +88,25 @@ public class Player : MonoBehaviour
             currentBoostCapacity += boostRecoveryRate * Time.deltaTime;
         }
     }
-
-    private void ApplyEarthStrike()
+    public void TryToApplyEarthStrike()
     {
-        if (CrossPlatformInputManager.GetButtonDown("Fire1"))
+        var earthEnergy = FindObjectOfType<EarthEnergy>();
+        if (earthEnergy.HaveEnoughEnergy(energyCost))
         {
-            Instantiate(earthStrike, Vector3.zero, Quaternion.identity);
-           // FindObjectOfType<EarthStrike>().InitiateStrike();
+            Instantiate(strikePrefab, Vector3.zero, Quaternion.identity);
+            earthEnergy.SpendEnergy(energyCost);
         }
     }
-
-   }
+        private void InititateEarthStrike()
+        {
+        if (CrossPlatformInputManager.GetButtonDown("Fire1"))
+        {
+            TryToApplyEarthStrike();
+        }
+        else
+        {
+            return;
+        }
+    }
+   
+} 

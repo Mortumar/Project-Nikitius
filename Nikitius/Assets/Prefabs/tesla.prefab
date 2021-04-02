@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3871221656073673951}
   - component: {fileID: 150461572129297274}
   - component: {fileID: 2734383478388680624}
-  - component: {fileID: -772974808024890698}
   m_Layer: 0
   m_Name: tesla
   m_TagString: Untagged
@@ -28,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 4535836455538411109}
   m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
   m_LocalPosition: {x: -22.363415, y: 9.84195, z: -19.238459}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 30, y: 30, z: 30}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -97,18 +96,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-772974808024890698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4535836455538411109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70514622dfd8bec4c86e3094bff320af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  spin: 10
-  target: {fileID: 8065553473741521742, guid: b4d3f999e23cc8743bc51a5794045b16, type: 3}

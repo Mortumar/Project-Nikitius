@@ -10,14 +10,13 @@ public class Meteor : MonoBehaviour
     [SerializeField] float xReflectionFactor = 500f;
     [SerializeField] float yReflectionFactor = 100f;
 
-
+    LivesDisplay liveDisplay;
+    ScoreDisplay scoreDisplay;
 
     [SerializeField] Transform target;
     [SerializeField] ParticleSystem explosionVfx;
 
     Rigidbody rigidBody;
-    Earth earth;
-
 
     bool isTargetingEarth = true;
     public bool isActive = true;
@@ -27,7 +26,6 @@ public class Meteor : MonoBehaviour
     private void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
-
     }
 
     // Update is called once per frame
@@ -52,6 +50,8 @@ public class Meteor : MonoBehaviour
     {
         if (other.gameObject.tag == "Finish")
         {
+            liveDisplay = FindObjectOfType<LivesDisplay>();
+            liveDisplay.takeLive();
             ParticleSystem explosion = Instantiate(explosionVfx, transform.position, transform.rotation);
             Destroy(gameObject);
         }
@@ -60,13 +60,14 @@ public class Meteor : MonoBehaviour
             print("Gotta destoy yourself");
             Destroy(gameObject);
         }
-
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
         {
+            scoreDisplay = FindObjectOfType<ScoreDisplay>();
+            scoreDisplay.AddScore();
             isActive = false;
             isTargetingEarth = false;
             rigidBody.useGravity = true;

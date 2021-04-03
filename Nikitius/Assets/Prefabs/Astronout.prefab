@@ -107,6 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energyVFX: {fileID: 19800006, guid: 8fc06027b01064e4f885fd8dd2929310, type: 3}
+  bloodVFX: {fileID: 19800000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
   speed: 3
   spin: 10
   target: {fileID: 8065553473741521742, guid: b4d3f999e23cc8743bc51a5794045b16, type: 3}

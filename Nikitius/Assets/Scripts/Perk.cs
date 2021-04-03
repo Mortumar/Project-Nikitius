@@ -5,6 +5,7 @@ using UnityEngine;
 public class Perk : MonoBehaviour
 {
     [SerializeField] ParticleSystem energyVFX;
+    [SerializeField] ParticleSystem bloodVFX;
     [SerializeField] float speed = 10f;
     [SerializeField] float spin = 10f;
 
@@ -50,6 +51,7 @@ public class Perk : MonoBehaviour
         }
         else if (other.gameObject.tag == "Asteroid")
         {
+            Instantiate(bloodVFX, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }

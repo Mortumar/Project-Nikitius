@@ -2523,3 +2523,115 @@ System memory in use after: 83.0 MB.
 Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1793.
 Total: 1.949700 ms (FindLiveObjects: 0.333200 ms CreateObjectMapping: 0.076900 ms MarkObjects: 1.519100 ms  DeleteObjects: 0.018500 ms)
 
+========================================================================
+Received Import Request.
+  Time since last request: 838.008329 seconds.
+  path: Assets/zVFX (not in use)/JMO Assets/Cartoon FX/Scripts
+  artifactKey: Guid(223e077284a06094ab8488db9e6eaa1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/zVFX (not in use)/JMO Assets/Cartoon FX/Scripts using Guid(223e077284a06094ab8488db9e6eaa1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf2351b02f25ea1cd722dfc59784fcdc') in 0.016883 seconds
+  Import took 0.019395 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.088991 seconds.
+  path: Assets/zVFX (not in use)/JMO Assets/Cartoon FX/CFX2 Prefabs/Explosions/CFX2_WWExplosion_C.prefab
+  artifactKey: Guid(aa8d6482d70a23445b4b2a928ed1b845) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/zVFX (not in use)/JMO Assets/Cartoon FX/CFX2 Prefabs/Explosions/CFX2_WWExplosion_C.prefab using Guid(aa8d6482d70a23445b4b2a928ed1b845) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f8a84e8052806942ae8e2875c0e6782') in 0.042025 seconds
+  Import took 0.045643 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000947 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.650 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.28 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1147 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 82.9 MB.
+System memory in use after: 83.0 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1796.
+Total: 2.028900 ms (FindLiveObjects: 0.308500 ms CreateObjectMapping: 0.052800 ms MarkObjects: 1.650900 ms  DeleteObjects: 0.015800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 121.553748 seconds.
+  path: Assets/Scripts/Perk.cs
+  artifactKey: Guid(70514622dfd8bec4c86e3094bff320af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Perk.cs using Guid(70514622dfd8bec4c86e3094bff320af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0dc5e63fee3a402a9960f0ab2cf56f31') in 0.006337 seconds
+  Import took 0.017644 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.183922 seconds.
+  path: Assets/Prefabs/Astronout.prefab
+  artifactKey: Guid(b815c1eb8c2afff4b9fa27fbe083eb02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Astronout.prefab using Guid(b815c1eb8c2afff4b9fa27fbe083eb02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4810c78502a7289d9de7c993b5e4ac9d') in 0.087092 seconds
+  Import took 0.091308 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000349 seconds.
+  path: Assets/Prefabs/spacex.prefab
+  artifactKey: Guid(ec34cfb2d6159d44c900f1b879b707a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/spacex.prefab using Guid(ec34cfb2d6159d44c900f1b879b707a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '001de21577b02b4fbca638a38c917cca') in 0.017646 seconds
+  Import took 0.019933 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001161 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.26 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.646 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.28 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1147 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 82.9 MB.
+System memory in use after: 83.0 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1800.
+Total: 1.571900 ms (FindLiveObjects: 0.170900 ms CreateObjectMapping: 0.028700 ms MarkObjects: 1.353900 ms  DeleteObjects: 0.017200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001006 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.28 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.648 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1147 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 82.9 MB.
+System memory in use after: 83.0 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1803.
+Total: 1.666900 ms (FindLiveObjects: 0.199100 ms CreateObjectMapping: 0.028000 ms MarkObjects: 1.421600 ms  DeleteObjects: 0.016800 ms)
+

@@ -8,8 +8,12 @@ public class Player : MonoBehaviour
     [SerializeField] float thrust = 1f;
     [SerializeField] float rotationFactor = 10f;
     [SerializeField] float fullBoostCapacity = 2f;
-    [SerializeField] float currentBoostCapacity;
+    [SerializeField] static float currentBoostCapacity;
     [SerializeField] float boostSpeed = 2f;
+
+    [SerializeField] float xRestrict = 26;
+    [SerializeField] float yRestrict = 20;
+
 
     [SerializeField] float boostСonsumption = 2f;
     [SerializeField] float boostRecoveryRate = 1f;
@@ -17,9 +21,9 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject strikePrefab;
     int energyCost = 100;
 
+    [SerializeField] GameObject electricHit;
     Rigidbody rigidBody;
 
-    float xThrow, yThrow;
 
     void Start()
     {
@@ -33,39 +37,31 @@ public class Player : MonoBehaviour
         ApplyThrust();
         ApplyBoost();
         BoostRecovery();
-        InititateEarthStrike();
+        CallEarthStrike();
     }
-     private void ApplyRotation()
-     {
+    private void ApplyRotation()
+    {
         if (CrossPlatformInputManager.GetButton("Horizontal button 1"))
 
             transform.Rotate(Vector3.up, rotationFactor);
-         
-         else if (CrossPlatformInputManager.GetButton("Horizontal button 2"))
-         {
-             transform.Rotate(Vector3.down, rotationFactor);
-         }
-     } 
-     /*  private void ApplyRotation()
-    {
-        float zRotation = CrossPlatformInputManager.GetAxis("Horizontal");
-        float zOffset = zRotation * rotationFactor * Time.deltaTime;
-        float newZRotation = transform.rotation.z + zOffset;
 
-       Quaternion endZRotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, newZRotation);
-       Quaternion startZRotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z);
-        if (newZRotation > 0 || newZRotation < 0 )
-       transform.rotation = Quaternion.Lerp(startZRotation, endZRotation, rotationFactor * Time.deltaTime);
-        else { return; }
-       transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y, newZRotation);
-   } */
-   
+        else if (CrossPlatformInputManager.GetButton("Horizontal button 2"))
+        {
+            transform.Rotate(Vector3.down, rotationFactor);
+        }
+    }
     private void ApplyThrust()
     {
         if (CrossPlatformInputManager.GetButton("Jump"))
         {
             transform.Translate(Vector3.forward * thrust * Time.deltaTime);
+            var xPos = transform.position.x;
+            var yPos = transform.position.y;
+            var newXPos = Mathf.Clamp(xPos, -xRestrict, xRestrict);
+            var newYPos = Mathf.Clamp(yPos, -yRestrict, yRestrict);
+            transform.position = new Vector3(newXPos, newYPos, 0);
         }
+
     }
 
     private void ApplyBoost()
@@ -73,7 +69,8 @@ public class Player : MonoBehaviour
         if (CrossPlatformInputManager.GetButton("Fire3"))
         {
             if (currentBoostCapacity > 0)
-            { transform.Translate(Vector3.forward * boostSpeed * Time.deltaTime);
+            {
+                transform.Translate(Vector3.forward * boostSpeed * Time.deltaTime);
                 currentBoostCapacity -= boostСonsumption * Time.deltaTime;
             }
             else
@@ -91,14 +88,15 @@ public class Player : MonoBehaviour
     public void TryToApplyEarthStrike()
     {
         var earthEnergy = FindObjectOfType<EarthEnergy>();
+
         if (earthEnergy.HaveEnoughEnergy(energyCost))
         {
             Instantiate(strikePrefab, Vector3.zero, Quaternion.identity);
             earthEnergy.SpendEnergy(energyCost);
         }
     }
-        private void InititateEarthStrike()
-        {
+    private void CallEarthStrike()
+    {
         if (CrossPlatformInputManager.GetButtonDown("Fire1"))
         {
             TryToApplyEarthStrike();
@@ -108,5 +106,24 @@ public class Player : MonoBehaviour
             return;
         }
     }
-   
-} 
+    public static float GetCurrentBoostCapacity()
+    {
+        return currentBoostCapacity;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Asteroid")
+        {
+            electricHit.SetActive(true);
+        }
+        else
+            return;
+       
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Asteroid")
+        { electricHit.SetActive(false); }
+    }
+}

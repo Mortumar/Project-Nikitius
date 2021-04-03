@@ -28,6 +28,7 @@ public class Earth : MonoBehaviour
     {
         Destroy(gameObject);
         Instantiate(explosionFX, transform.position, Quaternion.identity);
+        FindObjectOfType<SceneManagerScript>().LoadGameOver();
 
     }
     private void ProcessHit(DamageDealer damageDealer)

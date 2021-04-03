@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class ScoreDisplay : MonoBehaviour
 {
-    int score;
     Text scoreText;
-    int scoreToAdd = 100;
+    GameSession gameSession;
+
 
     void Start()
     {
@@ -22,12 +22,10 @@ public class ScoreDisplay : MonoBehaviour
 
     void UpdateDisplay()
     {
-        scoreText.text = score.ToString();
+        gameSession = FindObjectOfType<GameSession>();
+        scoreText.text = gameSession.GetScore().ToString();
     }
     
-    public void AddScore()
-    {
-        score = score + scoreToAdd;
-    }
+
     
 }

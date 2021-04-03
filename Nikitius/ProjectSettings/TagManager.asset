@@ -9,6 +9,7 @@ TagManager:
   - Border
   - Destroyer
   - Perk
+  - Slider
   layers:
   - Default
   - TransparentFX

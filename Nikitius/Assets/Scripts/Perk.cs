@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Perk : MonoBehaviour
 {
-
+    [SerializeField] ParticleSystem energyVFX;
     [SerializeField] float speed = 10f;
     [SerializeField] float spin = 10f;
 
@@ -39,6 +39,7 @@ public class Perk : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            Instantiate(energyVFX, transform.position, transform.rotation);
             earthEnergy.AddEnergy(EnergyToAdd);
             Destroy(gameObject);
         }

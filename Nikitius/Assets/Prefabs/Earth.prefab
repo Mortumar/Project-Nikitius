@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d891d12ffa2537429709cadaf2b7063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 1
   health: 100
   explosionFX: {fileID: 100002, guid: 9675dc7bbf0ba9e4cad5cafe3f4f7ee5, type: 3}
 --- !u!135 &919132149052615650

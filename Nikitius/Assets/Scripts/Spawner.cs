@@ -11,7 +11,8 @@ public class Spawner : MonoBehaviour
 
     [SerializeField] float maxSpawnDelay = 1f;
     [SerializeField] float minSpawnDelay = 5f;
-    [SerializeField] float speetOfRotation = 10f;
+    [SerializeField] float minSpeedOfRotation = 1f;
+    [SerializeField] float maxSpeedOfRotation = 10;
 
     IEnumerator Start()
     {
@@ -39,7 +40,7 @@ public class Spawner : MonoBehaviour
 
     private void RotatateArountEarth()
     {
-        transform.RotateAround(target, Vector3.forward, 20 * speetOfRotation * Time.deltaTime);
+        transform.RotateAround(target, Vector3.forward, Random.Range(minSpeedOfRotation, maxSpeedOfRotation) * Time.deltaTime);
     }
 
 }

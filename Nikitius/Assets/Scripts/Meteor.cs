@@ -11,7 +11,7 @@ public class Meteor : MonoBehaviour
     [SerializeField] float yReflectionFactor = 100f;
 
     LivesDisplay liveDisplay;
-    ScoreDisplay scoreDisplay;
+    GameSession gameSession;
 
     [SerializeField] Transform target;
     [SerializeField] ParticleSystem explosionVfx;
@@ -66,8 +66,8 @@ public class Meteor : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            scoreDisplay = FindObjectOfType<ScoreDisplay>();
-            scoreDisplay.AddScore();
+            gameSession = FindObjectOfType<GameSession>();
+            gameSession.AddScore();
             isActive = false;
             isTargetingEarth = false;
             rigidBody.useGravity = true;

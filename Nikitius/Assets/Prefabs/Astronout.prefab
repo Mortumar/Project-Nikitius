@@ -106,9 +106,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70514622dfd8bec4c86e3094bff320af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  energyVFX: {fileID: 19800006, guid: 8fc06027b01064e4f885fd8dd2929310, type: 3}
   speed: 3
   spin: 10
   target: {fileID: 8065553473741521742, guid: b4d3f999e23cc8743bc51a5794045b16, type: 3}
+  EnergyToAdd: 25
 --- !u!54 &-8273778406426197756
 Rigidbody:
   m_ObjectHideFlags: 0

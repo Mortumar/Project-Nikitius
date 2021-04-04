@@ -11,6 +11,7 @@ public class MusicPlayer : MonoBehaviour
 
     private void SetUpSingleton()
     {
+        // синглтоны - говнище :)
         if (FindObjectsOfType(GetType()).Length > 1)
         {
             Destroy(gameObject);

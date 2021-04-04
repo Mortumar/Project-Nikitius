@@ -16,6 +16,8 @@ public class PauseButton : MonoBehaviour
     void Update()
     {
     }    
+    // для чистоты лучше запоминать послдений Time.timeScale какой был при нажатии на паузу и его применять
+    // вдруг ты захочешь сделать замедление времени? а у тебя после паузы оно будет вырубаться
     public void PauseOn()
     {
         panelPause.SetActive(true);

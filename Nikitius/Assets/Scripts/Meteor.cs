@@ -18,6 +18,7 @@ public class Meteor : MonoBehaviour
     [SerializeField] AudioClip asteroidExplosionSound;
     Rigidbody rigidBody;
 
+    // у тебя вроде isActive и isTargetingEarth выполняют одну и ту же функцию
     bool isTargetingEarth = true;
     public bool isActive = true;
     float currentXPos;
@@ -52,6 +53,7 @@ public class Meteor : MonoBehaviour
         {
             liveDisplay = FindObjectOfType<LivesDisplay>();
             liveDisplay.takeLive();
+            // присваивание переменной explosion без использования ее в дальнейшем
             ParticleSystem explosion = Instantiate(explosionVfx, transform.position, transform.rotation);
             AudioSource.PlayClipAtPoint(asteroidExplosionSound, Camera.main.transform.position, 1);
             Destroy(gameObject);
@@ -87,10 +89,13 @@ public class Meteor : MonoBehaviour
     {
         if (transform.position.x < currentXPos)
         {
+            // вот видишь ты сделал метеор на физике, нужно и корабль тоже
             rigidBody.AddForce(Vector3.left * xReflectionFactor * Time.deltaTime);
         }
         else
         {
+            // отскоки тоже можно на физике сделать а не так
+            // или еще можно угол посчитать тригонометрией - покажешь скилы, а это хорошо
             rigidBody.AddForce(Vector3.right * xReflectionFactor * Time.deltaTime);
         }
     }

@@ -24,6 +24,7 @@ public class LivesDisplay : MonoBehaviour
         livesText.text = lives.ToString();
     }
 
+    // методы всегда с большой буквы
     public void takeLive()
     {
         lives--;

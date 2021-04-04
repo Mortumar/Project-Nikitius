@@ -8,6 +8,7 @@ public class EarthEnergy : MonoBehaviour
 {
     [SerializeField] int energy = 100;
     int maxEnergy = 100;
+    // всегда пользуйся textmeshpro так как он уже давно стандарт в Unity, а это считается легаси уже
     Text energyText;
     
 
@@ -24,6 +25,10 @@ public class EarthEnergy : MonoBehaviour
 
     void UpdateDisplay()
     {
+        // опять же UI должен реагировать а не в апдейте менятся
+        // почитай про delegate pattern
+        
+        // а также не канкатинируй строки а сделай $"{energy}%" - это стандарт
         energyText.text = energy.ToString() + "%"; 
     }
     public bool HaveEnoughEnergy(int amount)
@@ -32,6 +37,8 @@ public class EarthEnergy : MonoBehaviour
     }
     public void AddEnergy(int amount)
     {
+        // тут баг из за отсуствия отступа,
+        // вот поэтому в if всегда нужно делать скобки вне зависимости от количество строк внутри
         if (energy<maxEnergy)
         energy += amount;
         UpdateDisplay();

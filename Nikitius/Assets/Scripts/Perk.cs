@@ -55,6 +55,7 @@ public class Perk : MonoBehaviour
         }
         else if (other.gameObject.tag == "Asteroid")
         {
+            // а как удаляется сам объект эффекта потом?
             Instantiate(bloodVFX, transform.position, transform.rotation);
             AudioSource.PlayClipAtPoint(deathSound, Camera.main.transform.position, 1);
             Destroy(gameObject);

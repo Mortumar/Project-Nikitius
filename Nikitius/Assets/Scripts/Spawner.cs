@@ -17,7 +17,7 @@ public class Spawner : MonoBehaviour
 
     IEnumerator Start()
     {
-       
+       // не оставляй пустых строк как тут если нет чего-то, что нужно отделить
         while(spawn)
         {
             yield return new WaitForSeconds(Random.Range(minSpawnDelay, maxSpawnDelay));
@@ -39,6 +39,7 @@ public class Spawner : MonoBehaviour
         GameObject newMeteor = Instantiate(myMeteor, transform.position, transform.rotation);
     }
 
+    // опечатка в rotatearounDearth :)
     private void RotatateArountEarth()
     {
         transform.RotateAround(target, Vector3.forward, Random.Range(minSpeedOfRotation, maxSpeedOfRotation) * Time.deltaTime);

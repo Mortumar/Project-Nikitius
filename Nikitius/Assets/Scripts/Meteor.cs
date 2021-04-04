@@ -15,7 +15,7 @@ public class Meteor : MonoBehaviour
 
     [SerializeField] Transform target;
     [SerializeField] ParticleSystem explosionVfx;
-
+    [SerializeField] AudioClip asteroidExplosionSound;
     Rigidbody rigidBody;
 
     bool isTargetingEarth = true;
@@ -53,6 +53,7 @@ public class Meteor : MonoBehaviour
             liveDisplay = FindObjectOfType<LivesDisplay>();
             liveDisplay.takeLive();
             ParticleSystem explosion = Instantiate(explosionVfx, transform.position, transform.rotation);
+            AudioSource.PlayClipAtPoint(asteroidExplosionSound, Camera.main.transform.position, 1);
             Destroy(gameObject);
         }
         else if (other.gameObject.tag == "Destroyer")

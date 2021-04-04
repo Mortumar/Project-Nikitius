@@ -7,7 +7,7 @@ public class Earth : MonoBehaviour
 
     [SerializeField] int health = 100;
     [SerializeField] GameObject explosionFX;
-
+    [SerializeField] AudioClip earthExplosionSound;
     private void Start()
     {
 
@@ -27,6 +27,7 @@ public class Earth : MonoBehaviour
     void Explode()
     {
         Destroy(gameObject);
+        AudioSource.PlayClipAtPoint(earthExplosionSound, Camera.main.transform.position, 1);
         Instantiate(explosionFX, transform.position, Quaternion.identity);
         FindObjectOfType<SceneManagerScript>().LoadGameOver();
 

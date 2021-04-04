@@ -9,8 +9,9 @@ public class Spawner : MonoBehaviour
     [SerializeField] GameObject[] meteorPrefabArray;
     [SerializeField] Vector3 target;
 
-    [SerializeField] float maxSpawnDelay = 1f;
     [SerializeField] float minSpawnDelay = 5f;
+    [SerializeField] float maxSpawnDelay = 1f;
+    
     [SerializeField] float minSpeedOfRotation = 1f;
     [SerializeField] float maxSpeedOfRotation = 10;
 
@@ -42,5 +43,7 @@ public class Spawner : MonoBehaviour
     {
         transform.RotateAround(target, Vector3.forward, Random.Range(minSpeedOfRotation, maxSpeedOfRotation) * Time.deltaTime);
     }
+  
+    
 
 }

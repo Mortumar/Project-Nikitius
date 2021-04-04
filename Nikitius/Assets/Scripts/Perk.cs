@@ -11,6 +11,9 @@ public class Perk : MonoBehaviour
 
     [SerializeField] Transform target;
 
+    [SerializeField] AudioClip pickUpSound;
+    [SerializeField] AudioClip deathSound;
+
     EarthEnergy earthEnergy;
     [SerializeField] int EnergyToAdd = 25;
     // Start is called before the first frame update
@@ -41,6 +44,7 @@ public class Perk : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Instantiate(energyVFX, transform.position, transform.rotation);
+            AudioSource.PlayClipAtPoint(pickUpSound, Camera.main.transform.position, 1);
             earthEnergy.AddEnergy(EnergyToAdd);
             Destroy(gameObject);
         }
@@ -52,6 +56,7 @@ public class Perk : MonoBehaviour
         else if (other.gameObject.tag == "Asteroid")
         {
             Instantiate(bloodVFX, transform.position, transform.rotation);
+            AudioSource.PlayClipAtPoint(deathSound, Camera.main.transform.position, 1);
             Destroy(gameObject);
         }
     }

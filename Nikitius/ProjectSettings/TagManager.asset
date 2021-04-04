@@ -10,6 +10,7 @@ TagManager:
   - Destroyer
   - Perk
   - Slider
+  - UI buttons
   layers:
   - Default
   - TransparentFX

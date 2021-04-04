@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 300ab25dcc701d149af5da8dffb120a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strikeSpeed: 3
+  strikeSpeed: 4
   minimumRange: 0
-  maximumRange: 25
+  maximumRange: 40
   timeToDestroy: 5

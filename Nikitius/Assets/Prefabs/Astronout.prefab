@@ -111,6 +111,8 @@ MonoBehaviour:
   speed: 3
   spin: 10
   target: {fileID: 8065553473741521742, guid: b4d3f999e23cc8743bc51a5794045b16, type: 3}
+  pickUpSound: {fileID: 8300000, guid: fb37b5bb68265694a9dfe54c5a8d8027, type: 3}
+  deathSound: {fileID: 8300000, guid: 164d86f1964dc564dbc204e9badd549a, type: 3}
   EnergyToAdd: 25
 --- !u!54 &-8273778406426197756
 Rigidbody:

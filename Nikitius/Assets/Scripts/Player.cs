@@ -19,16 +19,22 @@ public class Player : MonoBehaviour
     [SerializeField] float boostRecoveryRate = 1f;
 
     [SerializeField] GameObject strikePrefab;
+    [SerializeField] AudioClip strikeSound;
     int energyCost = 100;
 
     [SerializeField] GameObject electricHit;
-    Rigidbody rigidBody;
+    [SerializeField] AudioClip electricHitSound;
+    [SerializeField] AudioClip mainEngine;
 
+    Rigidbody rigidBody;
+    AudioSource audioSource;
 
     void Start()
     {
+        electricHit.SetActive(false);
         rigidBody = GetComponent<Rigidbody>();
         currentBoostCapacity = fullBoostCapacity;
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -54,6 +60,10 @@ public class Player : MonoBehaviour
     {
         if (CrossPlatformInputManager.GetButton("Jump"))
         {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(mainEngine);
+            }
             transform.Translate(Vector3.forward * thrust * Time.deltaTime);
             var xPos = transform.position.x;
             var yPos = transform.position.y;
@@ -61,6 +71,8 @@ public class Player : MonoBehaviour
             var newYPos = Mathf.Clamp(yPos, -yRestrict, yRestrict);
             transform.position = new Vector3(newXPos, newYPos, 0);
         }
+        else
+            audioSource.Stop();
 
     }
 
@@ -73,8 +85,6 @@ public class Player : MonoBehaviour
                 transform.Translate(Vector3.forward * boostSpeed * Time.deltaTime);
                 currentBoostCapacity -= boostСonsumption * Time.deltaTime;
             }
-            else
-            { return; }
         }
     }
 
@@ -92,6 +102,7 @@ public class Player : MonoBehaviour
         if (earthEnergy.HaveEnoughEnergy(energyCost))
         {
             Instantiate(strikePrefab, Vector3.zero, Quaternion.identity);
+            AudioSource.PlayClipAtPoint(strikeSound, Camera.main.transform.position, 1);
             earthEnergy.SpendEnergy(energyCost);
         }
     }
@@ -113,13 +124,11 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Asteroid")
+        if (collision.gameObject.tag == "Asteroid" && electricHit != null)
         {
             electricHit.SetActive(true);
-        }
-        else
-            return;
-       
+            AudioSource.PlayClipAtPoint(electricHitSound, Camera.main.transform.position, 1);
+        }       
     }
     private void OnCollisionExit(Collision collision)
     {

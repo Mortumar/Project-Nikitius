@@ -105,6 +105,8 @@ MonoBehaviour:
   target: {fileID: 8065553473741521742, guid: b4d3f999e23cc8743bc51a5794045b16, type: 3}
   explosionVfx: {fileID: 198194127032045410, guid: 46876a2780737ec45a19d62f88e5ce56,
     type: 3}
+  asteroidExplosionSound: {fileID: 8300000, guid: b67bc5f49935ec649a8d630085cb55fe,
+    type: 3}
   isActive: 1
 --- !u!114 &5203708615840405276
 MonoBehaviour:

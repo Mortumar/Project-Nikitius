@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Perk : MonoBehaviour
@@ -32,28 +30,26 @@ public class Perk : MonoBehaviour
     {
          transform.position += (target.position - transform.position).normalized * speed * Time.deltaTime; 
     }
-
     void Spin()
     {
         transform.Rotate(Vector3.up, spin * Time.deltaTime, Space.World);
         transform.Rotate(Vector3.left, spin * Time.deltaTime, Space.World);
     }
-
     private void OnTriggerEnter (Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.CompareTag("Player"))
         {
             Instantiate(energyVFX, transform.position, transform.rotation);
             AudioSource.PlayClipAtPoint(pickUpSound, Camera.main.transform.position, 1);
             earthEnergy.AddEnergy(EnergyToAdd);
             Destroy(gameObject);
         }
-        else if (other.gameObject.tag == "Finish")
+        else if (other.gameObject.CompareTag("Finish"))
         {
             Debug.Log("Hello, Earth!");
             Destroy(gameObject);
         }
-        else if (other.gameObject.tag == "Asteroid")
+        else if (other.gameObject.CompareTag("Asteroid"))
         {
             Instantiate(bloodVFX, transform.position, transform.rotation);
             AudioSource.PlayClipAtPoint(deathSound, Camera.main.transform.position, 1);

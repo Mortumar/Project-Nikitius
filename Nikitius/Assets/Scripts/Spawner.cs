@@ -17,7 +17,6 @@ public class Spawner : MonoBehaviour
 
     IEnumerator Start()
     {
-       
         while(spawn)
         {
             yield return new WaitForSeconds(Random.Range(minSpawnDelay, maxSpawnDelay));
@@ -26,7 +25,7 @@ public class Spawner : MonoBehaviour
     }
     private void Update()
     {
-        RotatateArountEarth();
+        RotateArountEarth();
     }
     private void SpawnMeteor()
     {
@@ -39,7 +38,7 @@ public class Spawner : MonoBehaviour
         GameObject newMeteor = Instantiate(myMeteor, transform.position, transform.rotation);
     }
 
-    private void RotatateArountEarth()
+    private void RotateArountEarth()
     {
         transform.RotateAround(target, Vector3.forward, Random.Range(minSpeedOfRotation, maxSpeedOfRotation) * Time.deltaTime);
     }

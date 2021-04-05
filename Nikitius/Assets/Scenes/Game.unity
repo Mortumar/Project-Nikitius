@@ -218,6 +218,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1322562279998959968, guid: 028ba64ab803dc44d8c29e4d20553296,
+        type: 3}
+      propertyPath: thrust
+      value: 450000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1322562279998959968, guid: 028ba64ab803dc44d8c29e4d20553296,
+        type: 3}
+      propertyPath: xRestrict
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 1322562279998959968, guid: 028ba64ab803dc44d8c29e4d20553296,
+        type: 3}
+      propertyPath: yRestrict
+      value: 13.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1322562279998959968, guid: 028ba64ab803dc44d8c29e4d20553296,
+        type: 3}
+      propertyPath: boostSpeed
+      value: 800000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1322562279998959968, guid: 028ba64ab803dc44d8c29e4d20553296,
+        type: 3}
+      propertyPath: rotationFactor
+      value: 200000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1322562279998959968, guid: 028ba64ab803dc44d8c29e4d20553296,
+        type: 3}
+      propertyPath: "boost\u0421onsumption"
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5048028117640003198, guid: 028ba64ab803dc44d8c29e4d20553296,
         type: 3}
       propertyPath: m_RootOrder
@@ -278,6 +308,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8081096482048995644, guid: 028ba64ab803dc44d8c29e4d20553296,
+        type: 3}
+      propertyPath: m_Drag
+      value: 47
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081096482048995644, guid: 028ba64ab803dc44d8c29e4d20553296,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081096482048995644, guid: 028ba64ab803dc44d8c29e4d20553296,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 47
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081096482048995644, guid: 028ba64ab803dc44d8c29e4d20553296,
+        type: 3}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 028ba64ab803dc44d8c29e4d20553296, type: 3}
 --- !u!1 &453757051
@@ -320,7 +370,7 @@ MonoBehaviour:
   - {fileID: 8362725462963492096, guid: bd0a330ddee9d394697aa9c8ee0e2abb, type: 3}
   - {fileID: 884669311818490632, guid: b749887f3cb87004f8592e41426e83c7, type: 3}
   target: {x: 0, y: 0, z: 0}
-  minSpawnDelay: 1
+  minSpawnDelay: 0.5
   maxSpawnDelay: 4
   minSpeedOfRotation: 0.01
   maxSpeedOfRotation: 100
@@ -886,7 +936,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 65
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1174,8 +1224,8 @@ MonoBehaviour:
   - {fileID: 1611077667671513784, guid: b815c1eb8c2afff4b9fa27fbe083eb02, type: 3}
   target: {x: 0, y: 0, z: 0}
   minSpawnDelay: 10
-  maxSpawnDelay: 7
-  minSpeedOfRotation: 10
+  maxSpawnDelay: 15
+  minSpeedOfRotation: 5
   maxSpeedOfRotation: 10
 --- !u!4 &1315174522
 Transform:
@@ -1739,6 +1789,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658544413}
   m_CullTransparentMesh: 1
+--- !u!1 &1735810289 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5324919600847745358, guid: 028ba64ab803dc44d8c29e4d20553296,
+    type: 3}
+  m_PrefabInstance: {fileID: 431556076}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2024831072 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1741402289030094916, guid: 294eaed7e86d0a148876cdd0edc4e815,
@@ -2091,6 +2147,11 @@ PrefabInstance:
       propertyPath: energy
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 7655127428547815576, guid: d5bb82b1582c2cc47987225d282703b7,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1735810289}
     - target: {fileID: 7655127428549179612, guid: d5bb82b1582c2cc47987225d282703b7,
         type: 3}
       propertyPath: m_AnchorMax.x

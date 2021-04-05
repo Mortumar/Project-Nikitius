@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class Earth : MonoBehaviour
 {
@@ -8,10 +7,7 @@ public class Earth : MonoBehaviour
     [SerializeField] int health = 100;
     [SerializeField] GameObject explosionFX;
     [SerializeField] AudioClip earthExplosionSound;
-    private void Start()
-    {
-
-    }
+   
     void Update()
     {
         transform.Rotate(Vector3.up, speed * Time.deltaTime, Space.World);
@@ -26,11 +22,10 @@ public class Earth : MonoBehaviour
 
     void Explode()
     {
-        Destroy(gameObject);
         AudioSource.PlayClipAtPoint(earthExplosionSound, Camera.main.transform.position, 1);
         Instantiate(explosionFX, transform.position, Quaternion.identity);
         FindObjectOfType<SceneManagerScript>().LoadGameOver();
-
+        Destroy(gameObject);
     }
     private void ProcessHit(DamageDealer damageDealer)
     {

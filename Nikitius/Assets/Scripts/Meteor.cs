@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
 
 public class Meteor : MonoBehaviour
 {
@@ -17,8 +14,7 @@ public class Meteor : MonoBehaviour
     [SerializeField] ParticleSystem explosionVfx;
     [SerializeField] AudioClip asteroidExplosionSound;
     Rigidbody rigidBody;
-
-    bool isTargetingEarth = true;
+    
     public bool isActive = true;
     float currentXPos;
     float currentYPos;
@@ -27,62 +23,53 @@ public class Meteor : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         currentXPos = transform.position.x;
         currentYPos = transform.position.y;
         Spin();
         TargetEarth();
-
     }
 
     private void TargetEarth()
     {
-        if (isTargetingEarth && isActive)
+        if (isActive)
         { transform.position += (target.position - transform.position).normalized * speed * Time.deltaTime; }
         else
         { return; }
     }
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Finish")
+        if (other.gameObject.CompareTag("Finish"))
         {
             liveDisplay = FindObjectOfType<LivesDisplay>();
-            liveDisplay.takeLive();
-            ParticleSystem explosion = Instantiate(explosionVfx, transform.position, transform.rotation);
+            liveDisplay.TakeLive();
+            Instantiate(explosionVfx, transform.position, transform.rotation);
             AudioSource.PlayClipAtPoint(asteroidExplosionSound, Camera.main.transform.position, 1);
             Destroy(gameObject);
         }
-        else if (other.gameObject.tag == "Destroyer")
+        else if (other.gameObject.CompareTag("Destroyer"))
         {
             print("Gotta destoy yourself");
             Destroy(gameObject);
         }
     }
-
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
             gameSession = FindObjectOfType<GameSession>();
             gameSession.AddScore();
             isActive = false;
-            isTargetingEarth = false;
             rigidBody.useGravity = true;
             XReflectDirection();
             YReflectDirection();
         }
-
     }
-
     void Spin()
     {
         transform.Rotate(Vector3.up, spin * Time.deltaTime, Space.World);
     }
-
     void XReflectDirection()
     {
         if (transform.position.x < currentXPos)
@@ -105,7 +92,6 @@ public class Meteor : MonoBehaviour
                 rigidBody.AddForce(Vector3.up * yReflectionFactor * Time.deltaTime);
             }
         }
-
  
     }
 
